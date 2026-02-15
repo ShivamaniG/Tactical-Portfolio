@@ -129,7 +129,7 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
               {[
                 {
                   title: "Bachelor of Technology in Computer Science",
-                  org: "IIT Kurnool",
+                  org: "IIIT Kurnool",
                   period: "2021 - 2025",
                   desc: "Specializing in Intelligent Systems and Distributed Architecture"
                 },

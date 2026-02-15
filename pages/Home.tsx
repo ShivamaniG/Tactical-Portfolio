@@ -196,7 +196,7 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
               <GraduationCap className={`w-6 h-6 ${themeColors.accent} transition-transform group-hover:scale-125`} />
             </div>
             <p className={`text-xs sm:text-sm font-mono mb-1 ${themeColors.subtext}`}>Undergraduate @</p>
-            <p className={`text-sm sm:text-base font-mono font-bold ${isDarkMode ? 'text-zinc-400' : 'text-slate-700'}`}>IIT Kurnool '25</p>
+            <p className={`text-sm sm:text-base font-mono font-bold ${isDarkMode ? 'text-zinc-400' : 'text-slate-700'}`}>IIIT Kurnool '25</p>
           </div>
           <Link to="/about" className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 mt-6 rounded-2xl ${themeColors.muted} border ${themeColors.border} transition-all duration-300 hover:translate-x-1 group/link [transform:translateZ(20px)]`}>
             <span>Full Intel Dossier</span>
