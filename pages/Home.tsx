@@ -190,7 +190,7 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
       {/* EDUCATION */}
       <motion.div variants={itemVariants} className="md:col-span-2">
         <Link to="/about" aria-label="Open full profile" className="block h-full">
-          <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between cursor-pointer">
+          <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between cursor-pointer overflow-hidden">
             <div className="[transform:translateZ(40px)]">
               <div className="flex justify-between items-start mb-6">
                 <h2 className={`font-gaming text-lg sm:text-xl font-bold leading-tight ${isDarkMode ? 'text-zinc-200' : 'text-slate-800'}`}>EDUCATION<br />BACKGROUND</h2>
@@ -199,9 +199,9 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
               <p className={`text-xs sm:text-sm font-mono mb-1 ${themeColors.subtext}`}>Undergraduate @</p>
               <p className={`text-sm sm:text-base font-mono font-bold ${isDarkMode ? 'text-zinc-400' : 'text-slate-700'}`}>IIIT Kurnool '25</p>
             </div>
-            <div className="[transform:translateZ(20px)]">
+            <div className="mt-4 [transform:translateZ(20px)]">
               {/* <p className={`text-[9px] font-mono uppercase tracking-wider mb-2 ${themeColors.subtext}`}>Click anywhere on this card</p> */}
-              <div className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 rounded-2xl transition-all duration-300 ${themeColors.accentBg} text-white`}>
+              <div className={`w-full flex items-center justify-between text-[10px] font-gaming uppercase p-4 rounded-2xl transition-all duration-300 ${themeColors.accentBg} text-white`}>
                 <span>View Full Profile</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
@@ -279,11 +279,11 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
             </div>
             
             <div className="flex-1 text-center md:text-left [transform:translateZ(30px)]">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3">
                 <span className={`text-[8px] sm:text-[10px] font-gaming px-2 py-0.5 rounded bg-red-600/10 text-red-500 border border-red-500/20 uppercase tracking-tighter`}>Personal</span>
                 <h3 className={`font-gaming text-xl sm:text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>HOBBIES & INTERESTS</h3>
               </div>
-              <p className={`font-mono text-xs sm:text-sm leading-relaxed ${themeColors.subtext}`}>
+              <p className={`max-w-md mx-auto md:mx-0 font-mono text-xs sm:text-sm leading-relaxed ${themeColors.subtext}`}>
                 Outside work, <span className={`font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>I enjoy gaming and fitness</span>. 
                 I play <span className={themeColors.accent}>Valorant</span>, and also <span className={themeColors.accent}>Minecraft</span> and <span className={themeColors.accent}>GTA</span>.
               </p>
@@ -298,7 +298,7 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
                 href="https://discord.com" 
                 target="_blank" 
                 rel="noreferrer"
-                className={`flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-[#5865F2] text-white font-gaming text-[9px] sm:text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg hover:shadow-indigo-500/40`}
+                className={`w-full flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-[#5865F2] text-white font-gaming text-[9px] sm:text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg hover:shadow-indigo-500/40`}
               >
                 <Users size={16} /> Link via Discord
               </a>
@@ -312,7 +312,7 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
               </div>
             </div>
           </div>
-          <div className="absolute right-0 bottom-0 opacity-[0.03] pointer-events-none translate-x-10 translate-y-10 group-hover:scale-110 transition-transform duration-700">
+          <div className="hidden md:block absolute right-0 bottom-0 opacity-[0.03] pointer-events-none translate-x-10 translate-y-10 group-hover:scale-110 transition-transform duration-700">
             <Gamepad2 size={240} className={themeColors.accent} />
           </div>
         </TiltCard>
