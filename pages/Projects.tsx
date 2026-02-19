@@ -109,10 +109,10 @@ const Projects: React.FC<PageProps> = ({ isDarkMode }) => {
       {/* Header Section */}
       <motion.div variants={itemVariants} className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
         <div className="max-w-2xl">
-          <h1 className={`text-5xl sm:text-7xl font-gaming font-black mb-4 ${themeColors.heading}`}>CONQUESTS</h1>
+          <h1 className={`text-5xl sm:text-7xl font-gaming font-black mb-4 ${themeColors.heading}`}>PROJECTS</h1>
           <div className="flex items-center gap-4">
             <div className={`h-[2px] w-24 ${themeColors.accentBg} transition-all duration-500 group-hover:w-32`}></div>
-            <p className={`font-mono text-sm uppercase tracking-widest ${themeColors.subtext}`}>Archive of deployed operations and tactical builds.</p>
+            <p className={`font-mono text-sm uppercase tracking-widest ${themeColors.subtext}`}>Archive of completed work and technical builds.</p>
           </div>
         </div>
         
@@ -128,7 +128,7 @@ const Projects: React.FC<PageProps> = ({ isDarkMode }) => {
           <div>
             <p className={`text-[10px] font-gaming uppercase tracking-widest ${themeColors.subtext}`}>Repository Link</p>
             <p className={`font-mono text-sm font-bold flex items-center gap-2 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-              BUILDING_STUFF_v2.0 <ChevronRight size={14} className={`${themeColors.accent} transition-transform group-hover:translate-x-1`} />
+              github.com/shivamanig <ChevronRight size={14} className={`${themeColors.accent} transition-transform group-hover:translate-x-1`} />
             </p>
           </div>
         </a>
@@ -179,7 +179,7 @@ const Projects: React.FC<PageProps> = ({ isDarkMode }) => {
               ))}
             </div>
 
-            {/* Tactical Grid Overlay (Subtle) */}
+            {/* Subtle Grid Overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.01] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] group-hover:opacity-[0.02] transition-opacity"></div>
           </motion.div>
         ))}
@@ -192,14 +192,14 @@ const Projects: React.FC<PageProps> = ({ isDarkMode }) => {
       >
         <Terminal className={`w-12 h-12 ${themeColors.accent} group-hover:animate-pulse transition-transform duration-500 group-hover:scale-110`} />
         <div>
-          <h4 className={`font-gaming text-xl font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>SCANNING FOR NEW MISSIONS</h4>
-          <p className={`font-mono text-xs uppercase tracking-widest ${themeColors.subtext}`}>Interested in collaboration? My neural core is ready for the next deployment.</p>
+          <h4 className={`font-gaming text-xl font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>OPEN TO NEW PROJECTS</h4>
+          <p className={`font-mono text-xs uppercase tracking-widest ${themeColors.subtext}`}>Interested in collaboration? I am available for impactful project work.</p>
         </div>
         <a 
           href="mailto:shivamanigangarapu@gmail.com"
           className={`px-8 py-4 rounded-xl ${themeColors.accentBg} text-white font-gaming text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:scale-110 hover:rotate-1 shadow-lg active:scale-95`}
         >
-          Initiate Connection
+          Contact Me
         </a>
       </motion.div>
     </motion.div>

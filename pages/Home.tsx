@@ -32,7 +32,7 @@ interface PageProps {
 }
 
 /**
- * Tactical 3D Tilt Component
+ * Interactive 3D Tilt Component
  * Provides 3D rotation and dynamic shine based on mouse position
  */
 const TiltCard = ({ 
@@ -148,9 +148,9 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
 
   const handleTestimonialSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`System Verification: Testimonial from ${formData.name}`);
+    const subject = encodeURIComponent(`Testimonial from ${formData.name}`);
     const body = encodeURIComponent(
-      `Testimonial Entry:\n\nName: ${formData.name}\nRole/Company: ${formData.role}\n\nMessage:\n${formData.message}\n\n--- End of Signal ---`
+      `Testimonial:\n\nName: ${formData.name}\nRole/Company: ${formData.role}\n\nMessage:\n${formData.message}`
     );
     window.location.href = `mailto:shivamanigangarapu@gmail.com?subject=${subject}&body=${body}`;
     setShowForm(false);
@@ -187,72 +187,86 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
         </TiltCard>
       </motion.div>
 
-      {/* STRATEGIC ACQUISITIONS */}
+      {/* EDUCATION */}
       <motion.div variants={itemVariants} className="md:col-span-2">
-        <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between">
-          <div className="[transform:translateZ(40px)]">
-            <div className="flex justify-between items-start mb-6">
-              <h2 className={`font-gaming text-lg sm:text-xl font-bold leading-tight ${isDarkMode ? 'text-zinc-200' : 'text-slate-800'}`}>STRATEGIC<br />ACQUISITIONS</h2>
-              <GraduationCap className={`w-6 h-6 ${themeColors.accent} transition-transform group-hover:scale-125`} />
-            </div>
-            <p className={`text-xs sm:text-sm font-mono mb-1 ${themeColors.subtext}`}>Undergraduate @</p>
-            <p className={`text-sm sm:text-base font-mono font-bold ${isDarkMode ? 'text-zinc-400' : 'text-slate-700'}`}>IIIT Kurnool '25</p>
-          </div>
-          <Link to="/about" className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 mt-6 rounded-2xl ${themeColors.muted} border ${themeColors.border} transition-all duration-300 hover:translate-x-1 group/link [transform:translateZ(20px)]`}>
-            <span>Full Intel Dossier</span>
-            <ChevronRight className={`w-4 h-4 transition-transform group-hover/link:translate-x-1 ${themeColors.accent}`} />
-          </Link>
-        </TiltCard>
-      </motion.div>
-
-      {/* FIELD OPS PREVIEW */}
-      <motion.div variants={itemVariants} className="md:col-span-3">
-        <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8">
-          <div className="flex justify-between items-start mb-6 [transform:translateZ(30px)]">
-            <h2 className={`font-gaming text-xl sm:text-2xl font-black ${themeColors.heading}`}>FIELD OPS</h2>
-            <Briefcase className={`w-6 h-6 ${themeColors.accent} transition-transform group-hover:rotate-12`} />
-          </div>
-          <div className="space-y-4 mb-8 [transform:translateZ(10px)]">
-            {[
-              { role: "AI Engineer", org: "Antz AI" },
-              { role: "Research Mentor", org: "NGCN", opacity: "opacity-60" }
-            ].map((item, i) => (
-              <div key={i} className={`flex justify-between items-center gap-2 ${item.opacity || ''} transition-opacity duration-300 group-hover:opacity-100`}>
-                <span className={`text-xs sm:text-sm font-gaming truncate ${isDarkMode ? 'text-zinc-200' : 'text-slate-800'}`}>{item.role}</span>
-                <span className={`text-[9px] sm:text-[10px] font-mono shrink-0 ${themeColors.accent}`}>{item.org}</span>
+        <Link to="/about" aria-label="Open full profile" className="block h-full">
+          <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between cursor-pointer">
+            <div className="[transform:translateZ(40px)]">
+              <div className="flex justify-between items-start mb-6">
+                <h2 className={`font-gaming text-lg sm:text-xl font-bold leading-tight ${isDarkMode ? 'text-zinc-200' : 'text-slate-800'}`}>EDUCATION<br />BACKGROUND</h2>
+                <GraduationCap className={`w-6 h-6 ${themeColors.accent} transition-transform group-hover:scale-125`} />
               </div>
-            ))}
-          </div>
-          <Link to="/operations" className={`w-full py-3 sm:py-4 rounded-xl flex items-center justify-center gap-2 border border-dashed ${isDarkMode ? 'border-red-900/50 text-red-500' : 'border-blue-300 text-blue-600'} font-gaming text-[10px] uppercase transition-all duration-300 hover:bg-zinc-800/10 hover:border-solid [transform:translateZ(20px)]`}>
-            View Mission Log <ChevronRight size={14} />
-          </Link>
-        </TiltCard>
+              <p className={`text-xs sm:text-sm font-mono mb-1 ${themeColors.subtext}`}>Undergraduate @</p>
+              <p className={`text-sm sm:text-base font-mono font-bold ${isDarkMode ? 'text-zinc-400' : 'text-slate-700'}`}>IIIT Kurnool '25</p>
+            </div>
+            <div className="[transform:translateZ(20px)]">
+              {/* <p className={`text-[9px] font-mono uppercase tracking-wider mb-2 ${themeColors.subtext}`}>Click anywhere on this card</p> */}
+              <div className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 rounded-2xl transition-all duration-300 ${themeColors.accentBg} text-white`}>
+                <span>View Full Profile</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </TiltCard>
+        </Link>
       </motion.div>
 
-      {/* PROFICIENCIES */}
+      {/* EXPERIENCE PREVIEW */}
       <motion.div variants={itemVariants} className="md:col-span-3">
-        <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between">
-          <div className="[transform:translateZ(30px)]">
-            <div className="flex items-center gap-3 mb-6">
-              <Zap size={20} className={`${themeColors.accent} group-hover:animate-pulse`} />
-              <h2 className={`font-gaming text-lg sm:text-xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>PROFICIENCIES</h2>
+        <Link to="/operations" aria-label="Open experience page" className="block h-full">
+          <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 cursor-pointer">
+            <div className="flex justify-between items-start mb-6 [transform:translateZ(30px)]">
+              <h2 className={`font-gaming text-xl sm:text-2xl font-black ${themeColors.heading}`}>EXPERIENCE</h2>
+              <Briefcase className={`w-6 h-6 ${themeColors.accent} transition-transform group-hover:rotate-12`} />
             </div>
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              {['AI Systems', 'Full Stack', 'Cloud Ops', 'Data Science'].map((skill, i) => (
-                <div key={i} className={`p-2 sm:p-3 rounded-xl ${themeColors.muted} border ${themeColors.border} text-[8px] sm:text-[9px] font-gaming uppercase text-center transition-all duration-300 hover:scale-105 hover:border-opacity-100`}>
-                  {skill}
+            <div className="space-y-4 mb-8 [transform:translateZ(10px)]">
+              {[
+                { role: "AI Engineer", org: "Antz AI" },
+                { role: "Research Mentor", org: "NGCN", opacity: "opacity-60" }
+              ].map((item, i) => (
+                <div key={i} className={`flex justify-between items-center gap-2 ${item.opacity || ''} transition-opacity duration-300 group-hover:opacity-100`}>
+                  <span className={`text-xs sm:text-sm font-gaming truncate ${isDarkMode ? 'text-zinc-200' : 'text-slate-800'}`}>{item.role}</span>
+                  <span className={`text-[9px] sm:text-[10px] font-mono shrink-0 ${themeColors.accent}`}>{item.org}</span>
                 </div>
               ))}
             </div>
-          </div>
-          <Link to="/skills" className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 mt-6 rounded-2xl ${themeColors.muted} border ${themeColors.border} transition-all duration-300 hover:translate-x-1 group/link [transform:translateZ(20px)]`}>
-            <span>Full Skill Tree</span>
-            <ChevronRight className={`w-4 h-4 transition-transform group-hover/link:translate-x-1 ${themeColors.accent}`} />
-          </Link>
-        </TiltCard>
+            <div className="[transform:translateZ(20px)]">
+              <div className={`w-full py-3 sm:py-4 rounded-xl flex items-center justify-center gap-2 font-gaming text-[10px] uppercase transition-all duration-300 ${themeColors.accentBg} text-white`}>
+                View Experience <ChevronRight size={14} />
+              </div>
+            </div>
+          </TiltCard>
+        </Link>
       </motion.div>
 
-      {/* HOBBIES & GAMER SECTION */}
+      {/* SKILLS */}
+      <motion.div variants={itemVariants} className="md:col-span-3">
+        <Link to="/skills" aria-label="Open skills page" className="block h-full">
+          <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-8 flex flex-col justify-between cursor-pointer">
+            <div className="[transform:translateZ(30px)]">
+              <div className="flex items-center gap-3 mb-6">
+                <Zap size={20} className={`${themeColors.accent} group-hover:animate-pulse`} />
+                <h2 className={`font-gaming text-lg sm:text-xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>SKILLS</h2>
+              </div>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                {['AI Systems', 'Full Stack', 'Cloud Engineering', 'Data Science'].map((skill, i) => (
+                  <div key={i} className={`p-2 sm:p-3 rounded-xl ${themeColors.muted} border ${themeColors.border} text-[8px] sm:text-[9px] font-gaming uppercase text-center transition-all duration-300 hover:scale-105 hover:border-opacity-100`}>
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-6 [transform:translateZ(20px)]">
+              {/* <p className={`text-[9px] font-mono uppercase tracking-wider mb-2 ${themeColors.subtext}`}>Click anywhere on this card</p> */}
+              <div className={`flex items-center justify-between text-[10px] font-gaming uppercase p-4 rounded-2xl transition-all duration-300 ${themeColors.accentBg} text-white`}>
+                <span>View All Skills</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </TiltCard>
+        </Link>
+      </motion.div>
+
+      {/* HOBBIES SECTION */}
       <motion.div variants={itemVariants} className="md:col-span-6">
         <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative z-10 w-full">
@@ -266,12 +280,12 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
             
             <div className="flex-1 text-center md:text-left [transform:translateZ(30px)]">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <span className={`text-[8px] sm:text-[10px] font-gaming px-2 py-0.5 rounded bg-red-600/10 text-red-500 border border-red-500/20 uppercase tracking-tighter`}>Level 99</span>
-                <h3 className={`font-gaming text-xl sm:text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>HOBBIES & INTEL</h3>
+                <span className={`text-[8px] sm:text-[10px] font-gaming px-2 py-0.5 rounded bg-red-600/10 text-red-500 border border-red-500/20 uppercase tracking-tighter`}>Personal</span>
+                <h3 className={`font-gaming text-xl sm:text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>HOBBIES & INTERESTS</h3>
               </div>
               <p className={`font-mono text-xs sm:text-sm leading-relaxed ${themeColors.subtext}`}>
-                Operational downtime engaged. <span className={`font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>I'm a gamer and a GYM freak</span>. 
-                I play <span className={themeColors.accent}>Valorant</span> a lot, with <span className={themeColors.accent}>Minecraft</span> and <span className={themeColors.accent}>GTA</span>.
+                Outside work, <span className={`font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>I enjoy gaming and fitness</span>. 
+                I play <span className={themeColors.accent}>Valorant</span>, and also <span className={themeColors.accent}>Minecraft</span> and <span className={themeColors.accent}>GTA</span>.
               </p>
               <div className="mt-4 flex items-center justify-center md:justify-start gap-2">
                 <MessageSquare size={14} className={themeColors.accent} />
@@ -304,7 +318,7 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
         </TiltCard>
       </motion.div>
 
-      {/* VIEW CONQUESTS */}
+      {/* VIEW PROJECTS */}
       <motion.div variants={itemVariants} className="md:col-span-6">
         <TiltCard isDarkMode={isDarkMode} className="h-full p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
           <div className="flex items-center gap-4 sm:gap-6 [transform:translateZ(30px)]">
@@ -312,34 +326,34 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
               <Rocket size={28} />
             </div>
             <div>
-              <h3 className={`font-gaming text-xl sm:text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>DEPLOYED ASSETS</h3>
-              <p className={`font-mono text-xs sm:text-sm ${themeColors.subtext}`}>Browse high-impact systems.</p>
+              <h3 className={`font-gaming text-xl sm:text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>FEATURED PROJECTS</h3>
+              <p className={`font-mono text-xs sm:text-sm ${themeColors.subtext}`}>Browse selected work and case studies.</p>
             </div>
           </div>
           <Link to="/projects" className={`w-full md:w-auto px-6 sm:px-10 py-4 sm:py-5 rounded-2xl ${themeColors.accentBg} text-white font-gaming text-xs sm:text-sm font-black uppercase tracking-tight transition-all duration-300 ${themeColors.buttonHover} hover:scale-[1.05] shadow-xl flex items-center justify-center gap-3 [transform:translateZ(20px)]`}>
-            ACCESS CONQUESTS <ChevronRight size={18} />
+            VIEW PROJECTS <ChevronRight size={18} />
           </Link>
         </TiltCard>
       </motion.div>
 
-      {/* SIGNAL INTERCEPTS */}
+      {/* TESTIMONIALS */}
       <motion.div variants={itemVariants} className="md:col-span-6">
         <TiltCard isDarkMode={isDarkMode} className="h-full p-8 sm:p-12 flex flex-col items-center text-center">
           <div className="flex flex-col items-center gap-4 mb-8 [transform:translateZ(40px)]">
             <div className={`p-3 rounded-xl ${themeColors.accentBg} text-white group-hover:animate-bounce`}>
               <MessageSquareQuote size={28} />
             </div>
-            <h2 className={`font-gaming text-2xl sm:text-3xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>SIGNAL INTERCEPTS</h2>
+            <h2 className={`font-gaming text-2xl sm:text-3xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>TESTIMONIALS</h2>
           </div>
 
           <div className={`max-w-md w-full p-6 sm:p-8 rounded-3xl border ${themeColors.border} ${themeColors.muted} transition-all duration-300 hover:border-opacity-100 [transform:translateZ(20px)]`}>
             <Users className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-6 ${themeColors.accent} opacity-40 transition-opacity group-hover:opacity-100`} />
-            <p className={`font-mono text-xs sm:text-sm mb-8 ${themeColors.subtext}`}>Secure transmission lines are open for verified peer verification.</p>
+            <p className={`font-mono text-xs sm:text-sm mb-8 ${themeColors.subtext}`}>You can share a short testimonial here.</p>
             <button 
               onClick={() => setShowForm(true)}
               className={`w-full py-4 rounded-xl ${themeColors.accentBg} text-white font-gaming text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-3`}
             >
-              INITIATE TRANSMISSION <Send size={14} />
+              ADD TESTIMONIAL <Send size={14} />
             </button>
           </div>
         </TiltCard>
@@ -367,21 +381,21 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
                 </button>
                 <div className="flex items-center gap-3 mb-6">
                   <Terminal size={18} className={themeColors.accent} />
-                  <h3 className={`font-gaming text-lg sm:text-xl font-black ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>ENTRY LOG: TESTIMONIAL</h3>
+                  <h3 className={`font-gaming text-lg sm:text-xl font-black ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>ADD TESTIMONIAL</h3>
                 </div>
                 <form onSubmit={handleTestimonialSubmit} className="space-y-4 sm:space-y-6">
                   {['Name', 'Role', 'Message'].map((field) => (
                     <div key={field}>
-                      <label className={`block font-gaming text-[9px] uppercase mb-1.5 ${themeColors.subtext}`}>Dossier {field}</label>
+                      <label className={`block font-gaming text-[9px] uppercase mb-1.5 ${themeColors.subtext}`}>{field}</label>
                       {field === 'Message' ? (
-                        <textarea required rows={3} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className={`w-full px-4 py-3 rounded-xl border focus:outline-none transition-all ${isDarkMode ? 'focus:border-red-500' : 'focus:border-blue-500'} font-mono text-xs sm:text-sm resize-none ${themeColors.input}`} placeholder={`Intercept ${field} Data...`} />
+                        <textarea required rows={3} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className={`w-full px-4 py-3 rounded-xl border focus:outline-none transition-all ${isDarkMode ? 'focus:border-red-500' : 'focus:border-blue-500'} font-mono text-xs sm:text-sm resize-none ${themeColors.input}`} placeholder="Write your testimonial..." />
                       ) : (
-                        <input required type="text" value={field === 'Name' ? formData.name : formData.role} onChange={(e) => setFormData({...formData, [field.toLowerCase()]: e.target.value})} className={`w-full px-4 py-3 rounded-xl border focus:outline-none transition-all ${isDarkMode ? 'focus:border-red-500' : 'focus:border-blue-500'} font-mono text-xs sm:text-sm ${themeColors.input}`} placeholder={field === 'Name' ? 'Identified Entity' : 'Position @ Organization'} />
+                        <input required type="text" value={field === 'Name' ? formData.name : formData.role} onChange={(e) => setFormData({...formData, [field.toLowerCase()]: e.target.value})} className={`w-full px-4 py-3 rounded-xl border focus:outline-none transition-all ${isDarkMode ? 'focus:border-red-500' : 'focus:border-blue-500'} font-mono text-xs sm:text-sm ${themeColors.input}`} placeholder={field === 'Name' ? 'Your name' : 'Role / Company'} />
                       )}
                     </div>
                   ))}
                   <button type="submit" className={`w-full py-4 rounded-xl ${themeColors.accentBg} text-white font-gaming text-[10px] sm:text-xs font-bold uppercase transition-all hover:scale-102 active:scale-95 shadow-xl flex items-center justify-center gap-3`}>
-                    SEND TRANSMISSION <Send size={14} />
+                    SEND TESTIMONIAL <Send size={14} />
                   </button>
                 </form>
               </motion.div>
@@ -390,11 +404,11 @@ const Home: React.FC<PageProps> = ({ isDarkMode }) => {
         </AnimatePresence>
       </motion.div>
 
-      {/* INITIATE COMMS */}
-      <motion.div variants={itemVariants} className="md:col-span-6">
+      {/* CONTACT */}
+      <motion.div id="contact" variants={itemVariants} className="md:col-span-6">
         <TiltCard isDarkMode={isDarkMode} className="h-full p-8 sm:p-10 flex flex-col items-center justify-center text-center py-10">
           <div className="relative z-10 flex flex-col items-center w-full [transform:translateZ(40px)]">
-            <h2 className={`font-gaming text-2xl sm:text-3xl font-black mb-8 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>INITIATE COMMS</h2>
+            <h2 className={`font-gaming text-2xl sm:text-3xl font-black mb-8 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>CONTACT</h2>
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
                 { icon: <Github size={20} />, href: "https://github.com/shivamanig" },

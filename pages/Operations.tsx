@@ -57,8 +57,8 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
       title: "AI Engineer", 
       org: "Antz AI", 
       period: "July 2025 - Present",
-      brief: "Architecting neural core systems and high-scale AI infrastructure deployments.",
-      tags: ["Systems Architecture", "Neural Engines"]
+      brief: "Architecting AI systems and high-scale infrastructure deployments.",
+      tags: ["Systems Architecture", "AI Systems"]
     },
     { 
       title: "AI Intern", 
@@ -71,8 +71,8 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
       title: "Research Mentor", 
       org: "Next Gen Computing and Networking (NGCN)", 
       period: "Apr 2025 - Jul 2025",
-      brief: "Guided peer-led research initiatives in advanced networking and AI-integrated protocols.",
-      tags: ["Leadership", "Protocols"]
+      brief: "Guided peer-led research initiatives in advanced networking and AI-integrated systems.",
+      tags: ["Leadership", "AI Systems"]
     },
     { 
       title: "AI Researcher", 
@@ -104,7 +104,7 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="max-w-4xl">
-        <h1 className={`text-5xl sm:text-6xl font-gaming font-black mb-6 ${themeColors.heading}`}>MISSION OPERATIONS</h1>
+        <h1 className={`text-5xl sm:text-6xl font-gaming font-black mb-6 ${themeColors.heading}`}>PROFESSIONAL EXPERIENCE</h1>
         <div className="flex items-center gap-4">
           <div className={`h-[1px] flex-grow ${isDarkMode ? 'bg-red-900/30' : 'bg-blue-200'}`}></div>
           <p className={`text-lg font-mono uppercase tracking-widest ${isDarkMode ? 'text-zinc-400' : 'text-slate-600'}`}>
@@ -120,7 +120,7 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
             <div className={`p-3 rounded-xl ${themeColors.muted} ${themeColors.accent}`}>
               <Briefcase size={32} />
             </div>
-            <h2 className={`font-gaming text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>COMMAND HISTORY</h2>
+            <h2 className={`font-gaming text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>WORK HISTORY</h2>
           </div>
 
           <div className="relative space-y-12 before:absolute before:left-[23px] before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-red-600/50 before:to-transparent">
@@ -172,7 +172,7 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
               {[
                 { label: "Systems Architecture", icon: <Layers size={14} /> },
                 { label: "AI Infrastructure", icon: <Zap size={14} /> },
-                { label: "Full Stack Ops", icon: <Globe size={14} /> }
+                { label: "Full Stack Development", icon: <Globe size={14} /> }
               ].map((spec, i) => (
                 <div key={i} className={`flex items-center justify-between p-4 rounded-xl ${themeColors.muted} border ${themeColors.border}`}>
                   <span className={`text-xs font-gaming ${isDarkMode ? 'text-zinc-300' : 'text-slate-700'}`}>{spec.label}</span>
@@ -187,16 +187,16 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
               <Zap size={24} />
             </div>
             <div>
-              <h4 className={`font-gaming text-sm font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>DEPLOYMENT READY</h4>
+              <h4 className={`font-gaming text-sm font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>AVAILABLE FOR WORK</h4>
               <p className={`font-mono text-[11px] leading-relaxed mb-6 ${themeColors.subtext}`}>
                 Currently open for high-impact collaborations and architectural challenges.
               </p>
               <Link 
-                to="/#comms" 
+                to="/#contact" 
                 onClick={() => {
                    // Ensure navigation to home and then scroll to section
                    setTimeout(() => {
-                     document.getElementById('comms')?.scrollIntoView({ behavior: 'smooth' });
+                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                    }, 100);
                 }}
                 className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl border border-${isDarkMode ? 'red-500' : 'blue-500'} ${isDarkMode ? 'text-red-500' : 'text-blue-500'} font-gaming text-[10px] uppercase hover:bg-${isDarkMode ? 'red-500/10' : 'blue-500/10'} transition-all hover:scale-[1.02] shadow-sm`}
@@ -212,7 +212,7 @@ const Operations: React.FC<PageProps> = ({ isDarkMode }) => {
       <motion.div variants={itemVariants} className={`p-10 rounded-3xl border ${themeColors.card} ${themeColors.border} shadow-lg overflow-hidden relative`}>
         <div className="flex items-center gap-4 mb-10">
           <Users size={24} className={themeColors.accent} />
-          <h3 className={`font-gaming text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>ALLIED FORCES & COLLABORATIONS</h3>
+          <h3 className={`font-gaming text-2xl font-black ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>CLIENTS & COLLABORATIONS</h3>
         </div>
         
         <div className="flex overflow-hidden relative">

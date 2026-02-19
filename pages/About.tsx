@@ -61,7 +61,7 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
     >
       {/* Header Section */}
       <motion.div variants={itemVariants} className="max-w-4xl">
-        <h1 className={`text-5xl sm:text-6xl font-gaming font-black mb-4 ${themeColors.heading}`}>MISSION INTEL</h1>
+        <h1 className={`text-5xl sm:text-6xl font-gaming font-black mb-4 ${themeColors.heading}`}>ABOUT ME</h1>
         <div className="flex items-center gap-4">
           <div className={`h-[1px] flex-grow ${isDarkMode ? 'bg-red-900/30' : 'bg-blue-200'}`}></div>
           <p className={`text-lg font-mono uppercase tracking-widest ${isDarkMode ? 'text-zinc-400' : 'text-slate-600'}`}>
@@ -72,7 +72,7 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
 
       <motion.div variants={containerVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        {/* Profile Dossier (Left Column) */}
+        {/* Profile (Left Column) */}
         <motion.div 
           variants={itemVariants}
           className="lg:col-span-4 lg:sticky lg:top-28"
@@ -92,25 +92,25 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
             
             <div className="w-full space-y-4 text-left z-10">
               <div className={`p-5 rounded-2xl ${themeColors.muted} border ${themeColors.border}`}>
-                <p className={`text-[10px] font-gaming uppercase ${themeColors.subtext} mb-1 tracking-wider`}>System Status</p>
+                <p className={`text-[10px] font-gaming uppercase ${themeColors.subtext} mb-1 tracking-wider`}>Current Status</p>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                  <p className="font-mono text-sm text-green-500 font-bold uppercase">Operational // Active</p>
+                  <p className="font-mono text-sm text-green-500 font-bold uppercase">Open to Opportunities</p>
                 </div>
               </div>
               <div className={`p-5 rounded-2xl ${themeColors.muted} border ${themeColors.border}`}>
-                <p className={`text-[10px] font-gaming uppercase ${themeColors.subtext} mb-1 tracking-wider`}>Prime Objective</p>
+                <p className={`text-[10px] font-gaming uppercase ${themeColors.subtext} mb-1 tracking-wider`}>Career Focus</p>
                 <p className={`font-mono text-sm ${isDarkMode ? 'text-zinc-200' : 'text-slate-700'} font-bold`}>Full Stack AI Systems</p>
               </div>
             </div>
 
             <button className={`mt-8 w-full py-5 rounded-2xl ${themeColors.accentBg} text-white font-gaming text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:opacity-90 transition-all hover:scale-[1.02] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group z-10`}>
-              <Download size={16} className="group-hover:translate-y-1 transition-transform" /> Download Dossier
+              <Download size={16} className="group-hover:translate-y-1 transition-transform" /> Download Resume
             </button>
           </div>
         </motion.div>
 
-        {/* Intelligence Grid (Right Columns) */}
+        {/* Details Grid (Right Columns) */}
         <motion.div variants={containerVariants} className="lg:col-span-8 space-y-8">
           
           {/* Education Block */}
@@ -244,7 +244,7 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
             </motion.div>
           </div>
 
-          {/* Tactical Directive (Footer Block) */}
+          {/* Core Belief (Footer Block) */}
           <motion.div 
             variants={itemVariants}
             className={`p-10 rounded-3xl border border-dashed ${isDarkMode ? 'border-red-900/40' : 'border-blue-300'} bg-transparent flex flex-col md:flex-row items-center gap-8 shadow-inner`}
@@ -253,7 +253,7 @@ const About: React.FC<PageProps> = ({ isDarkMode }) => {
               <Layers className={themeColors.accent} size={32} />
             </div>
             <div className="text-center md:text-left">
-              <h4 className={`font-gaming text-xl font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>CORE DIRECTIVE 01</h4>
+              <h4 className={`font-gaming text-xl font-black mb-2 ${isDarkMode ? 'text-zinc-100' : 'text-slate-800'}`}>CORE BELIEF</h4>
               <p className={`font-mono text-sm italic tracking-tight leading-relaxed ${isDarkMode ? 'text-zinc-400' : 'text-slate-600'}`}>
                 "The objective is not to build better tools, but to redefine what humanity can achieve with those tools at their disposal."
               </p>

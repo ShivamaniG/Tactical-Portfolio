@@ -10,7 +10,12 @@ import Skills from './pages/Skills';
 import { Sun, Moon, Terminal, Menu, X, ChevronRight } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      return false;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Apply theme-specific body background
@@ -28,11 +33,11 @@ const App: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { path: '/', label: 'Dashboard' },
-    { path: '/skills', label: 'Skill Tree' },
-    { path: '/operations', label: 'Operations' },
-    { path: '/about', label: 'Intel' },
-    { path: '/projects', label: 'Conquests' },
+    { path: '/', label: 'Home' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/operations', label: 'Experience' },
+    { path: '/about', label: 'About' },
+    { path: '/projects', label: 'Projects' },
   ];
 
   return (
@@ -45,7 +50,7 @@ const App: React.FC = () => {
           
           <Link to="/" className="flex items-center gap-2 group shrink-0">
             <Terminal className={`w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300 group-hover:scale-110 ${isDarkMode ? 'text-red-600' : 'text-blue-600'}`} />
-            <span className="font-gaming font-bold tracking-tighter text-sm sm:text-lg uppercase whitespace-nowrap">NEURAL_SENTRY_v3.0</span>
+            <span className="font-gaming font-bold tracking-tighter text-sm sm:text-lg uppercase whitespace-nowrap">SHIVAMANI PORTFOLIO</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -123,10 +128,10 @@ const App: React.FC = () => {
               </div>
 
               <div className="mt-auto pt-8 border-t border-current border-opacity-10 flex flex-col items-center gap-4">
-                <p className="font-mono text-[10px] uppercase tracking-widest opacity-50">Local Neural Sync Active</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest opacity-50">Website Loaded</p>
                 <div className={`flex items-center gap-2 px-4 py-2 rounded-full border ${isDarkMode ? 'border-red-500/20' : 'border-blue-500/20'}`}>
                    <div className={`w-2 h-2 rounded-full animate-pulse ${isDarkMode ? 'bg-red-500' : 'bg-blue-600'}`}></div>
-                   <span className="text-[10px] font-mono uppercase font-bold tracking-tighter">Protocol: Online</span>
+                   <span className="text-[10px] font-mono uppercase font-bold tracking-tighter">Status: Online</span>
                 </div>
               </div>
             </motion.div>
@@ -147,7 +152,7 @@ const App: React.FC = () => {
         {/* Footer */}
         <footer className={`py-8 text-center border-t transition-colors duration-300 ${isDarkMode ? 'border-red-900/30 text-red-900/50' : 'border-blue-200 text-blue-900/30'}`}>
           <p className="font-mono text-[10px] sm:text-xs uppercase tracking-widest">
-            System Protocol Active // Established 2024 // All Rights Reserved
+            Portfolio Website // Established 2024 // All Rights Reserved
           </p>
         </footer>
       </div>

@@ -53,28 +53,28 @@ const Skills: React.FC<PageProps> = ({ isDarkMode }) => {
 
   const skillGroups = [
     {
-      category: "AI / ML Operations",
+      category: "AI / ML",
       icon: <Brain size={24} />,
       skills: ["NLP", "Machine Learning", "Deep Learning", "TensorFlow"],
       span: "md:col-span-3",
       accent: "from-purple-500/20 to-transparent"
     },
     {
-      category: "System Core / Backend",
+      category: "Backend Development",
       icon: <Terminal size={24} />,
       skills: ["Flask", "FastAPI", "Node.js"],
       span: "md:col-span-3",
       accent: "from-green-500/20 to-transparent"
     },
     {
-      category: "Tactical Frontend",
+      category: "Frontend Development",
       icon: <Layout size={24} />,
       skills: ["React", "Tailwind", "HTML", "CSS"],
       span: "md:col-span-2",
       accent: "from-blue-500/20 to-transparent"
     },
     {
-      category: "Data Repositories",
+      category: "Databases",
       icon: <Database size={24} />,
       skills: ["MySQL", "MongoDB", "Firebase"],
       span: "md:col-span-2",
@@ -88,7 +88,7 @@ const Skills: React.FC<PageProps> = ({ isDarkMode }) => {
       accent: "from-cyan-500/20 to-transparent"
     },
     {
-      category: "Strategic Assets",
+      category: "Core Strengths",
       icon: <ShieldCheck size={24} />,
       skills: ["Psychology", "Leadership", "Problem-solving"],
       span: "md:col-span-6",
@@ -105,10 +105,10 @@ const Skills: React.FC<PageProps> = ({ isDarkMode }) => {
     >
       {/* Header */}
       <motion.div variants={itemVariants} className="max-w-4xl">
-        <h1 className={`text-5xl sm:text-7xl font-gaming font-black mb-6 ${themeColors.heading}`}>SKILL_TREE</h1>
+        <h1 className={`text-5xl sm:text-7xl font-gaming font-black mb-6 ${themeColors.heading}`}>SKILLS</h1>
         <div className="flex items-center gap-4">
           <div className={`h-[2px] w-24 ${themeColors.accentBg} transition-all duration-500`}></div>
-          <p className={`font-mono text-sm uppercase tracking-widest ${themeColors.subtext}`}>Neural Network Capability & Tactical Specializations</p>
+          <p className={`font-mono text-sm uppercase tracking-widest ${themeColors.subtext}`}>Technical Skills and Professional Strengths</p>
         </div>
       </motion.div>
 
@@ -148,20 +148,20 @@ const Skills: React.FC<PageProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            {/* Tactical Scan Line Decor */}
+      {/* Scan Line Decor */}
             <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* Terminal Footer Info */}
+      {/* Footer Info */}
       <motion.div variants={itemVariants} className={`p-8 rounded-3xl border border-dashed ${isDarkMode ? 'border-red-900/40' : 'border-blue-300'} bg-transparent flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 hover:border-solid hover:bg-zinc-800/5`}>
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 rounded-full border border-red-500/20 flex items-center justify-center animate-pulse">
             <Zap className={themeColors.accent} size={18} />
           </div>
           <p className={`font-mono text-xs uppercase tracking-tight ${themeColors.subtext}`}>
-            System analysis: 98% specialization depth achieved in core AI/ML categories.
+            Current focus: strong specialization depth in core AI/ML categories.
           </p>
         </div>
         <div className="flex gap-2">
